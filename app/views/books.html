@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <title>Books</title>
+	    <link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+	</head>
+	<body>
+		<div id="container">
+			<div id="header">
+				<div id="welcome">
+					<h2>Welcome, {{session['name']}}!</h2>
+				</div>
+				<div class="links">
+					<!-- links to new book page -->
+					<a href="/users/books/new">Add Book and Review</a>
+					<a id="logout" href="/users/logout">Logout</a>
+				</div>
+			</div>	
+			<div id="reviews">
+				<h3> Recent Book Reviews </h3> 
+				{% if reviews|length < 3 %}
+				{% for i in range(0,reviews|length) %}
+				<h2>{{reviews[i]['title']}} </h2>
+				<p>Rating: 
+					{% for stars in range(0, reviews[i]['rating']) %}
+					<img id="star" src="/static/img/star.png">
+					{%endfor%}	
+				</p>
+				<p><a href="/users/{{ reviews[i]['user_id'] }}">{{reviews[i]['reviewers']}}</a> says: {{reviews[i]['review']}}</p>
+				<p>Post on {{reviews[i]['created_at']}} </p> 
+				{% endfor %} 
+				
+				{%else%}
+
+				{% for i in range(0,3) %}
+				<h2><a href="/users/books/{{reviews[i]['book_id']}}">{{reviews[i]['title']}} </a></h2>
+				<p>Rating: 
+				{% for stars in range(0, reviews[i]['rating']) %}
+				<img id="star" src="/static/img/star.png">
+				{%endfor%}	
+				</p>
+				<p><a href="/users/{{ reviews[i]['user_id'] }}">{{reviews[i]['reviewers']}}</a>  says: {{reviews[i]['review']}}</p>
+				<p>Post on {{reviews[i]['created_at']}} </p> 
+				{% endfor %} 
+
+			</div>
+			<div id="other_reviews">
+				<h3> Other Books with Reviews </h3>
+				 {% for x in range (3, reviews|length)%}
+				<a href="/users/books/{{reviews[x]['book_id']}}"> {{ reviews[x]['title'] }} </a><br>
+				{% endfor %}
+			</div>	
+				{%endif%}
+		</div>
+	</body>
+</html>
+				

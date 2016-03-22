@@ -1,3 +1,103 @@
 * {
   font-family: monaco;
+
 }
+
+div#container{
+	width: 1200px;
+	min-height: 500px;
+	margin: 0px auto;
+	/*border: 1px red solid;*/
+}
+	div#register, div#login, div#reviews, div#other_reviews{
+		width: 500px;
+		min-height: 500px;
+		display: inline-block;
+		border: 1px solid black;
+		vertical-align: top;
+		padding: 10px;
+		margin-left: 50px;
+		
+	}
+	div#login{
+		margin-left: 10px;
+	}
+		input{
+			display: block;
+			margin-bottom: 10px;
+		}
+
+
+	#links, #welcome{
+		display: inline-block;
+		width: 400px;
+		vertical-align: top;
+
+	}
+	#links {
+		margin-left: 160px;
+		float: right;
+	}
+
+	#welcome{
+		margin-left: 50px;
+	}
+
+	#rating{
+		background-color: grey;
+	}
+
+	#header{
+		margin-bottom: 50px;
+	}
+
+	#reviews2{
+		width: 500px;
+		min-height: 400px;
+		margin-top: 10px;
+	/*	border: 1px solid black;*/
+	}
+
+	#star{
+		width: 20px;
+		height: 20px;
+	}
+	#delete{
+		margin-left: 320px;
+	}
+	#title{
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	.links{
+		/*float:right;*/
+		position:absolute;
+		right: 10%;
+		top: 5%;
+	}
+	#user{
+		/*border: 1px solid black;*/
+		margin-top: 10%;
+		padding: 10px;
+		width: 500px;
+		min-height: 200px;
+	}
+	#books{
+		margin-left: 5%;
+	}
+
+	#addReview{
+		/*border: 1px solid black;*/
+		display: inline-block;
+		position: absolute;
+		top: 18%;
+		right: 10%;
+		width: 400px;
+	}
+
+
+
+
+
+

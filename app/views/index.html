@@ -3,6 +3,36 @@
     <link rel="stylesheet" href="/static/css/styles.css" type="text/css">
   </head>
   <body>
-    The best place to start is the "WelcomeController.py" file in app/controllers.
-  </body>
+  		<div id="container">
+  			<h1> Welcome to The Book Review! </h1>
+  			<div id="register">
+  				<h2>Register</h2>
+  				    {% with messages = get_flashed_messages() %}
+				    {% if messages %}
+			        {% for message in messages %}
+			            <p style='color:blue'>{{message}}</p>
+			        {% endfor %}
+				    {% endif %}
+					{% endwith %}
+  				<form action="/users/create" method='Post'>
+  					Name: <input type="text" name='name'>
+  					Alias: <input type='text' name='alias'>
+  					Email: <input type="text" name='email'>
+  					Password: <input type='text' name='password'>
+  					Confirm Password: <input type='text' name='password2'>
+  					<input type='submit' value='Register'>
+  				</form>
+  			</div>
+  			<div id="login">
+  				<h2>Login</h2>
+  				<form action="/users/login" method='Post'>
+  					Email: <input type="text" name='email'>
+  					Password: <input type='text' name='password'>
+  					<input type='submit' value='Login'>
+  				</form>
+  			</div>		
+  		<div>
+	</body>
 </html>
+  					
+  					
